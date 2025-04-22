@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defit Afbil Fauzi - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        .hero {
+            background-color: #1E2A44;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #FFD700;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section {
+            background-color: #1E2A44;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+        h2 {
+            color: #FFD700;
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+        p, li {
+            font-size: 1em;
+            font-weight: 400;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        li:hover {
+            transform: scale(1.02);
+            color: #FFD700;
+        }
+        footer {
+            background-color: #1E2A44;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .section {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            p, li {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Defit Afbil Fauzi</h1>
+        <p>Teknisi Jaringan | Inovator IoT | Content Creator</p>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Ringkasan Profil</h2>
+            <p>Lulusan SMK Teknik Komputer Jaringan dan Telekomunikasi dengan pengalaman magang sebagai customer service dan proyek inovasi berbasis IoT. Terampil dalam pemecahan masalah, kesabaran dalam pelayanan pelanggan, serta kecepatan dan ketelitian dalam bekerja. Memiliki sertifikasi MTCNA dan semangat belajar teknologi baru untuk berkontribusi di bidang teknologi, jaringan komputer, atau pelayanan pelanggan.</p>
+        </div>
+
+        <div class="section">
+            <h2>Keterampilan</h2>
+            <ul>
+                <li>Pengelolaan jaringan komputer (dasar)</li>
+                <li>Penggunaan Microsoft Office (Word, Excel, PowerPoint)</li>
+                <li>Penggunaan alat berbasis AI untuk produktivitas</li>
+                <li>Pemecahan masalah (problem solving) secara logis</li>
+                <li>Public speaking dan komunikasi efektif</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Kelebihan</h2>
+            <ul>
+                <li>Ketangguhan di bawah tekanan dalam situasi kerja cepat</li>
+                <li>Kecepatan dan ketelitian dalam bekerja</li>
+                <li>Jiwa kepemimpinan dan koordinasi tim</li>
+                <li>Disiplin dan bertanggung jawab</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Pengalaman</h2>
+            <p><strong>Magang – Customer Service, Indomedia</strong><br>
+            Juli 2024 – Oktober 2024 | Salatiga, Jawa Tengah</p>
+            <ul>
+                <li>Berbicara langsung dengan pelanggan untuk memberikan solusi cepat dan akurat, meningkatkan efisiensi pelayanan.</li>
+                <li>Beradaptasi dan mempelajari sistem ticketing digital dengan cepat untuk memproses permintaan pelanggan secara teliti.</li>
+                <li>Memecahkan masalah teknis pelanggan terkait layanan internet, berkolaborasi dengan tim teknis untuk solusi efektif.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Pendidikan</h2>
+            <p><strong>SMK Teknik Komputer Jaringan dan Telekomunikasi, SMK Negeri 2 Salatiga</strong><br>
+            2021 – 2024 | Salatiga, Jawa Tengah</p>
+        </div>
+
+        <div class="section">
+            <h2>Sertifikasi</h2>
+            <ul>
+                <li>MikroTik Certified Network Associate (MTCNA), 2024</li>
+                <li>Sertifikat Magang Customer Service, Indomedia, 2024</li>
+                <li>Sertifikat Keikutsertaan Lomba Krenova (Inovasi Teknologi), 2024</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Proyek</h2>
+            <p><strong>Pengembangan Kipas Angin Otomatis Berbasis Arduino, Lomba Krenova</strong><br>
+            2024 | Salatiga, Jawa Tengah</p>
+            <ul>
+                <li>Merancang kipas angin otomatis dengan penyetabil kelembaban udara berbasis Arduino, berhasil masuk tahap presentasi Lomba Krenova tingkat kota.</li>
+                <li>Memecahkan masalah teknis selama pengembangan dengan pendekatan logis dan teliti, menyelesaikan proyek dalam 3 bulan.</li>
+                <li>Mempresentasikan proyek di depan juri dengan tenang, menunjukkan kemampuan public speaking dan komunikasi teknis.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Kontak: defitafbilfauzii@gmail.com | +62 878-4871-1503</p>
+    </footer>
+</body>
+</html>
