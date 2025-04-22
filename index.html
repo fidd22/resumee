@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defit Afbil Fauzi - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -44,25 +45,16 @@
             padding: 25px;
             margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .section h2, .section p, .section ul {
             opacity: 0;
-            animation: fadeIn 1s ease forwards;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section.visible h2, .section.visible p, .section.visible ul {
+            opacity: 1;
+            transform: translateX(0);
         }
-        .section:nth-child(1) { animation-delay: 0.2s; }
-        .section:nth-child(2) { animation-delay: 0.4s; }
-        .section:nth-child(3) { animation-delay: 0.6s; }
-        .section:nth-child(4) { animation-delay: 0.8s; }
-        .section:nth-child(5) { animation-delay: 1s; }
-        .section:nth-child(6) { animation-delay: 1.2s; }
         h2 {
             color: #FFD700;
             font-size: 1.6em;
@@ -95,6 +87,18 @@
             font-size: 0.9em;
             font-weight: 400;
         }
+        .social-links {
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: #FFD700;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #FFFFFF;
+        }
         @media (max-width: 600px) {
             .hero h1 {
                 font-size: 2em;
@@ -117,7 +121,7 @@
 <body>
     <div class="hero">
         <h1>Defit Afbil Fauzi</h1>
-        <p>Teknisi Jaringan | Inovator IoT | Content Creator</p>
+        <p>Teknisi Jaringan | Inovator IoT | Professional Customer Service</p>
     </div>
 
     <div class="container">
@@ -187,6 +191,25 @@
 
     <footer>
         <p>Kontak: defitafbilfauzii@gmail.com | +62 878-4871-1503</p>
+        <div class="social-links">
+            <a href="https://facebook.com/wolfxstoree" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/fidd_only" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            threshold: 0.3
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 </html>
