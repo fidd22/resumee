@@ -1,0 +1,159 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Defit Afbil Fauzi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header p {
+            margin: 5px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+        p, li {
+            line-height: 1.6;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Defit Afbil Fauzi</h1>
+        <p>RT 03 RW 01, Desa Cabean, Kecamatan Sidomukti, Kota Salatiga, Provinsi Jawa Tengah</p>
+        <p>Email: defit@gmail.com | Telepon: +62 812-3456-7890</p>
+    </header>
+
+    <div class="container">
+        <h2>Ringkasan Profil</h2>
+        <p>Lulusan SMK Teknik Komputer Jaringan dan Telekomunikasi dengan pengalaman magang sebagai customer service dan proyek inovasi berbasis IoT. Terampil dalam pemecahan masalah, kesabaran dalam pelayanan pelanggan, serta kecepatan dan ketelitian dalam bekerja. Memiliki sertifikasi MTCNA dan semangat belajar teknologi baru untuk berkontribusi di bidang teknologi, jaringan komputer, atau pelayanan pelanggan.</p>
+
+        <h2>Keterampilan</h2>
+        <ul>
+            <li>Pengelolaan jaringan komputer (dasar)</li>
+            <li>Penggunaan Microsoft Office (Word, Excel, PowerPoint)</li>
+            <li>Penggunaan alat berbasis AI untuk produktivitas</li>
+            <li>Pemecahan masalah (problem solving) secara logis</li>
+            <li>Ketangguhan di bawah tekanan dalam situasi kerja cepat</li>
+            <li>Kecepatan dan ketelitian dalam bekerja</li>
+            <li>Semangat belajar teknologi baru</li>
+            <li>Public speaking dan komunikasi efektif</li>
+            <li>Jiwa kepemimpinan dan koordinasi tim</li>
+        </ul>
+
+        <h2>Pengalaman</h2>
+        <p><strong>Magang – Customer Service, Indomedia</strong><br>
+        Juli 2024 – Oktober 2024 | Salatiga, Jawa Tengah</p>
+        <ul>
+            <li>Menangani 50+ keluhan dan permintaan pelanggan per hari dengan kesabaran, ketenangan, dan profesionalisme, mencapai tingkat kepuasan pelanggan 85%.</li>
+            <li>Berbicara langsung dengan pelanggan untuk memberikan solusi cepat dan akurat, meningkatkan efisiensi pelayanan.</li>
+            <li>Beradaptasi dan mempelajari sistem ticketing digital dengan cepat untuk memproses permintaan pelanggan secara teliti.</li>
+            <li>Memecahkan masalah teknis pelanggan terkait layanan internet, berkolaborasi dengan tim teknis untuk solusi efektif.</li>
+        </ul>
+
+        <h2>Pendidikan</h2>
+        <p><strong>SMK Teknik Komputer Jaringan dan Telekomunikasi, SMK Negeri 2 Salatiga</strong><br>
+        2021 – 2024 | Salatiga, Jawa Tengah</p>
+        <ul>
+            <li>Nilai rata-rata: 85/100</li>
+        </ul>
+
+        <h2>Sertifikasi</h2>
+        <ul>
+            <li>MikroTik Certified Network Associate (MTCNA), 2024</li>
+            <li>Sertifikat Magang Customer Service, Indomedia, 2024</li>
+            <li>Sertifikat Keikutsertaan Lomba Krenova (Inovasi Teknologi), 2024</li>
+        </ul>
+
+        <h2>Proyek</h2>
+        <p><strong>Pengembangan Kipas Angin Otomatis Berbasis Arduino, Lomba Krenova</strong><br>
+        2024 | Salatiga, Jawa Tengah</p>
+        <ul>
+            <li>Merancang kipas angin otomatis dengan penyetabil kelembaban udara berbasis Arduino, berhasil masuk tahap presentasi Lomba Krenova tingkat kota.</li>
+            <li>Memecahkan masalah teknis selama pengembangan dengan pendekatan logis dan teliti, menyelesaikan proyek dalam 3 bulan.</li>
+            <li>Mempresentasikan proyek di depan juri dengan tenang, menunjukkan kemampuan public speaking dan komunikasi teknis.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Kontak: defit@gmail.com | +62 812-3456-7890</p>
+    </footer>
+</body>
+</html>
